@@ -24,10 +24,46 @@
         android:text="@string/next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.752"
+        app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textview_first"
-        app:layout_constraintVertical_bias="0.237" />
+        app:layout_constraintVertical_bias="0.319" />
+
+    <Button
+        android:id="@+id/button_reload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="reload"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.318"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textview_first"
+        app:layout_constraintVertical_bias="0.271" />
+
+    <Button
+        android:id="@+id/button_static"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="use static"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textview_first"
+        app:layout_constraintVertical_bias="0.185" />
+
+    <Button
+        android:id="@+id/button_server"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="use server"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textview_first"
+        app:layout_constraintVertical_bias="0.185" />
 
     <TextView
         android:id="@+id/textView"
@@ -52,4 +88,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_url"
+        android:layout_width="247dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="31dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview_first">
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/input_url_edit"
+        android:layout_width="321dp"
+        android:layout_height="45dp"
+        android:hint="hint"
+        android:text="http://192.168.1.1:8100"
+        tools:layout_editor_absoluteX="51dp"
+        tools:layout_editor_absoluteY="98dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
