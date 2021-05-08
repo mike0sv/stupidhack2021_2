@@ -4,6 +4,8 @@ import android.app.usage.StorageStatsManager;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.os.storage.StorageManager;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -43,6 +45,7 @@ public class FirstFragment extends Fragment {
 
     private FragmentFirstBinding binding;
     private StorageStatsManager ssm;
+    private Vibrator vibe;
 
 
     @Override
@@ -53,6 +56,7 @@ public class FirstFragment extends Fragment {
 
         binding = FragmentFirstBinding.inflate(inflater, container, false);
         ssm = getActivity().getSystemService(StorageStatsManager.class);
+        vibe = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
         return binding.getRoot();
 
     }
@@ -141,6 +145,7 @@ public class FirstFragment extends Fragment {
                     if (path.startsWith(PREFIX) && (!path.equals(PREFIX) || fileList.length == 1)) {
                         getContext().deleteFile(path);
                         updateCount(-1);
+                        vibe.vibrate(VibrationEffect.createOneShot(1200, 100));
                         break;
                     }
                 }
@@ -175,6 +180,14 @@ public class FirstFragment extends Fragment {
                 webviewContent.reload();
 //                NavHostFragment.findNavController(FirstFragment.this)
 //                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
+            }
+        });
+
+        binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(FirstFragment.this)
+                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
             }
         });
 
