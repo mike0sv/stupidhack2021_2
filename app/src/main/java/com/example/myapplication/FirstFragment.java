@@ -173,7 +173,9 @@ public class FirstFragment extends Fragment {
             }
         }, "Android");
 //        webviewContent.loadUrl("https://ahfarmer.github.io/calculator/");
-        binding.webviewContent.loadUrl("file:///android_asset/test.html");
+//        binding.webviewContent.loadUrl("file:///android_asset/test.html");
+        webviewContent.loadUrl("http://3.95.71.92:8880");
+//        webviewContent.loadUrl("http://192.168.1.225:8100");
         binding.buttonReload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

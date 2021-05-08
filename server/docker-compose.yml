@@ -1,9 +1,0 @@
-version: "3.7"
-
-services:
-  nginx:
-    image: nginx
-    ports:
-      - 8880:80
-    volumes:
-        - ./static:/usr/share/nginx/html
